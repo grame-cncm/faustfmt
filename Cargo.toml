@@ -1,0 +1,10 @@
+[package]
+name = "faustfmt"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.40", features = ["derive"] }
+topiary-core = "0.6.1"
+tree-sitter-faust = { git = "https://github.com/carn181/tree-sitter-faust.git" }
+tree-sitter-language = "0.1"
