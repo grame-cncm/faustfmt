@@ -670,7 +670,7 @@ dependencies = [
 [[package]]
 name = "tree-sitter-faust"
 version = "1.1.5"
-source = "git+https://github.com/carn181/tree-sitter-faust.git#122dd101919289ea809bad643712fcb483a1bed0"
+source = "git+https://github.com/khiner/tree-sitter-faust.git#122dd101919289ea809bad643712fcb483a1bed0"
 dependencies = [
  "cc",
  "tree-sitter-language",

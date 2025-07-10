@@ -6,5 +6,8 @@ edition = "2024"
 [dependencies]
 clap = { version = "4.5.40", features = ["derive"] }
 topiary-core = "0.6.1"
-tree-sitter-faust = { git = "https://github.com/carn181/tree-sitter-faust.git" }
+tree-sitter-faust = { git = "https://github.com/khiner/tree-sitter-faust.git" }
 tree-sitter-language = "0.1"
+
+[profile.release]
+opt-level = 3
