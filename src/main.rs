@@ -60,8 +60,7 @@ pub static DEFAULT_QUERY: &str = r#"
 [(function_definition) (definition) ";" @append_hardline]
 
 (arguments (_) "," @append_empty_softline)
-(arguments (_) . "," @append_indent_start)
-(arguments (_)* ",") @append_indent_end
+(arguments (_) . "," @append_indent_start) @append_indent_end
 
 [
  (function_definition)
@@ -101,7 +100,7 @@ fn main() {
     if args.files.is_empty() {
         let mut stdin_input = io::stdin();
         let formatted_output = format(&mut stdin_input, args.indent.clone(), &query_content);
-        println!("{}", formatted_output);
+        print!("{}", formatted_output);
     } else {
         for file_path in args.files {
             match std::fs::File::open(&file_path) {
