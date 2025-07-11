@@ -21,12 +21,9 @@ struct Args {
 }
 
 pub static DEFAULT_QUERY: &str = r#"
- [(comment)] @append_hardline
+[(comment)] @append_hardline
 
-(global_metadata) @leaf
-(function_metadata) @leaf
-(parameters) @leaf
-[(string) (fstring)] @leaf
+[(comment) (global_metadata) (function_metadata) (parameters) (string) (fstring)] @leaf
 
 
 ((function_metadata)
@@ -43,12 +40,12 @@ pub static DEFAULT_QUERY: &str = r#"
 [","] @append_space
 
 (environment
-    "{" @append_indent_start @append_empty_softline @prepend_space
+    "{" @append_indent_start @append_hardline @prepend_space
     "}" @prepend_indent_end
   )
 
 (rec_environment
-    "{" @append_indent_start @append_empty_softline @prepend_space
+    "{" @append_indent_start @append_hardline @prepend_space
     "}" @prepend_indent_end
   )
 
@@ -65,16 +62,6 @@ pub static DEFAULT_QUERY: &str = r#"
 (arguments (_) "," @append_empty_softline)
 (arguments (_) . "," @append_indent_start)
 (arguments (_)* ",") @append_indent_end
-
-[
-  (function_definition)
-  (definition)
-  (global_metadata)
-  (function_metadata)
-  (function_call)
-  (file_import)
-  (comment)
-  ] @allow_blank_line_before
 "#;
 
 fn main() {
