@@ -130,7 +130,7 @@ fn format(input: &mut impl io::Read, indent: String, query_content: &str) -> Str
         indent: Some(indent.to_string()),
     };
 
-    let mut output_buffer = io::BufWriter::new(Vec::new());
+    let mut output_buffer = Vec::new();
 
     formatter(
         input,
@@ -143,5 +143,5 @@ fn format(input: &mut impl io::Read, indent: String, query_content: &str) -> Str
     )
     .unwrap();
 
-    str::from_utf8(output_buffer.buffer()).expect("Formatter output should be valid UTF-8").to_string()
+    str::from_utf8(&output_buffer).expect("Formatter output should be valid UTF-8").to_string()
 }
