@@ -62,6 +62,16 @@ pub static DEFAULT_QUERY: &str = r#"
 (arguments (_) "," @append_empty_softline)
 (arguments (_) . "," @append_indent_start)
 (arguments (_)* ",") @append_indent_end
+
+[
+ (function_definition)
+ (definition)
+ (global_metadata)
+ (function_metadata)
+ (function_call)
+ (file_import)
+ (comment)
+ ] @allow_blank_line_before
 "#;
 
 fn main() {
