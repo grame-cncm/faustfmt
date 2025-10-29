@@ -6,7 +6,7 @@ use std::str;
 
 #[derive(Parser, Debug)]
 #[command(name = "faustfmt")]
-#[command(version = "1.0")]
+#[command(version = "0.0.1")]
 #[command(about = "A formatter for the Faust programming language", long_about = None)]
 struct Args {
     files: Vec<String>,
